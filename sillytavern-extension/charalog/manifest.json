@@ -1,0 +1,12 @@
+{
+  "display_name": "CharaLog",
+  "loading_order": 100,
+  "requires": [],
+  "optional": [],
+  "js": "index.js",
+  "css": "style.css",
+  "author": "possibility",
+  "version": "0.2.23",
+  "homePage": "",
+  "auto_update": false
+}

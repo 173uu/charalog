@@ -1,0 +1,31 @@
+node_modules/
+dist/
+dev-server.log
+*.log
+.env
+.env.*
+.DS_Store
+Thumbs.db
+
+# Local SillyTavern exports / private test fixtures
+src/data/stTestDataset.json
+src/data/*Dataset.json
+src/data/*Export*.json
+src/data/cardTagExamples.json
+src/data/extractedStyleCandidates.json
+src/data/newTagCandidates.json
+src/data/style_samples.reviewed.json
+src/data/review_decisions.json
+src/data/dictionary.reviewed.json
+scripts/generateCommunityExamples.mjs
+scripts/generateStTestDataset.mjs
+AGENTS.md
+CLAUDE.md
+docs/
+memory-bank/
+README_zh.md
+*.jsonl
+
+# Local build/runtime caches
+.vite/
+coverage/

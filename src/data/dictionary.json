@@ -1,0 +1,2747 @@
+{
+  "_meta": {
+    "version": "0.2.1-deduped",
+    "source": "从 90 张 ST 卡标题人工归纳的种子词典",
+    "schema": "TagEntry: { id, label, category, family?, aliases[], negativeAliases?, description?, examples?[], parentId?, priority?, scopePreference?, status? }",
+    "categories": [
+      "角色气质",
+      "身份阶层",
+      "关系结构",
+      "情感走向",
+      "互动机制",
+      "世界观题材",
+      "雷点/偏好",
+      "其他"
+    ],
+    "families_used": [
+      "犬系角色",
+      "daddy系",
+      "血缘禁忌",
+      "冷热反差",
+      "破镜系",
+      "强制爱系",
+      "酸涩家族",
+      "万人迷/群像"
+    ],
+    "notes": [
+      "family 字段用于画像层聚合,不用于召回阶段同义合并。",
+      "aliases 只放真同义词。家族成员各自独立成 entry。",
+      "negativeAliases 命中要扣分,常用于消歧(如'纯爱'≠'纯恨')。",
+      "scopeHint 在召回阶段由匹配字段决定,不写死在 entry 里。",
+      "新增 parentId/priority/scopePreference/status，用于后处理去重、画像聚合和 AI prompt 控制。",
+      "允许 AI 生成受控 freeformTags，但必须进入 unmatchedTagPool，不能直接污染正式词典。",
+      "已去重 alias：同一 alias 只保留在 canonical 标签上，避免本地召回一词多义误触发。"
+    ]
+  },
+  "tags": [
+    {
+      "id": "qz_lengremenghuo",
+      "label": "冷脸萌",
+      "category": "角色气质",
+      "family": "冷热反差",
+      "aliases": [
+        "冷脸难攻略",
+        "毒舌冷脸萌",
+        "冷脸美人",
+        "冷脸"
+      ],
+      "description": "外表冷淡疏离,内里有反差萌点。重点在'反差',不是单纯的高冷。",
+      "examples": [
+        "这个冷脸萌同桌想要我先表白",
+        "毒舌冷脸萌"
+      ],
+      "negativeAliases": [],
+      "parentId": "cold_distance_type",
+      "priority": 75,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qz_waileng_neire",
+      "label": "外冷内热",
+      "category": "角色气质",
+      "family": "冷热反差",
+      "aliases": [
+        "外冷内热",
+        "高冷但直球"
+      ],
+      "description": "对外冷淡,对'你'温柔。比'冷脸萌'更直接进入恋爱关系。",
+      "examples": [
+        "季云止·外冷内热"
+      ],
+      "negativeAliases": [],
+      "parentId": "cold_distance_type",
+      "priority": 70,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qz_xiaomianhu",
+      "label": "笑面虎",
+      "category": "角色气质",
+      "family": "冷热反差",
+      "aliases": [
+        "笑面虎哥",
+        "笑眯眯"
+      ],
+      "description": "表面笑呵呵实则危险/腹黑。和外冷内热反向。",
+      "examples": [
+        "笑面虎哥",
+        "笑眯眯温柔男高"
+      ],
+      "negativeAliases": [],
+      "parentId": "dangerous_smile_type",
+      "priority": 70,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qz_gaolingzhihua",
+      "label": "高岭之花",
+      "category": "角色气质",
+      "aliases": [
+        "高岭之花",
+        "禁欲",
+        "禁欲背德"
+      ],
+      "description": "清冷自持、性张力来自距离感。常和'禁欲'共现。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "cold_distance_type",
+      "priority": 65,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qz_qianqianjunzi",
+      "label": "老实人",
+      "category": "角色气质",
+      "aliases": [
+        "纯情老实人",
+        "不要欺负老实人"
+      ],
+      "description": "保守克制。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "stability_type",
+      "priority": 55,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qz_pi_huai_lao_liu_mang",
+      "label": "痞帅",
+      "category": "角色气质",
+      "aliases": [
+        "痞坏老流氓",
+        "痞帅",
+        "大尾巴狼"
+      ],
+      "description": "有匪气、不正经但有底线",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qz_dan_ren",
+      "label": "淡人",
+      "category": "角色气质",
+      "aliases": [
+        "淡人",
+        "冷漠b"
+      ],
+      "description": "情感钝感、低欲望、心如止水类型。和'冷脸萌'不同,内里也是凉的。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qz_zui_jian",
+      "label": "嘴贱",
+      "category": "角色气质",
+      "aliases": [
+        "嘴贱",
+        "嘴贱搞笑",
+        "嘴欠哥",
+        "嘴臭咖",
+        "嘴贱臭屁"
+      ],
+      "description": "话不饶人、毒舌挑衅型。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "sharp_tongue_type",
+      "priority": 65,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qz_zha_nan",
+      "label": "渣男",
+      "category": "角色气质",
+      "aliases": [
+        "渣男",
+        "海王",
+        "非典型渣男",
+        "非典型浪子",
+        "妇女之友",
+        "博爱"
+      ],
+      "description": "感情不专一或边界混乱。注意'非典型X'通常意味着翻案/反差。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "playboy_type",
+      "priority": 60,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qz_si_wen_bai_lei",
+      "label": "斯文败类",
+      "category": "角色气质",
+      "aliases": [
+        "斯文败类",
+        "西装暴徒"
+      ],
+      "description": "外表体面有教养,行为/性癖危险。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "civilized_danger_type",
+      "priority": 80,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qz_re_lian_jian",
+      "label": "热脸贱",
+      "category": "角色气质",
+      "family": "犬系角色",
+      "aliases": [
+        "热脸贱",
+        "贱萌",
+        "萌脸贱"
+      ],
+      "description": "上赶着粘人但嘴硬挨打型,典型小狗特质。和单纯的'贱'不同,核心是'热脸'。",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "dog_type",
+      "priority": 70,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qz_xiao_gou",
+      "label": "小狗",
+      "category": "角色气质",
+      "family": "犬系角色",
+      "aliases": [
+        "小狗",
+        "迟钝的狗男",
+        "狗皮膏药",
+        "纯情孩砸",
+        "纯情狗"
+      ],
+      "description": "粘人忠诚、依赖性强的犬系男主,情感正向。",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "dog_type",
+      "priority": 65,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qz_gou_nan",
+      "label": "狗男",
+      "category": "角色气质",
+      "family": "犬系角色",
+      "aliases": [
+        "狗男",
+        "臭屁狗男",
+        "贱萌狗男"
+      ],
+      "negativeAliases": [
+        "狗男坏狗",
+        "恶女狗男"
+      ],
+      "description": "圈内常用,中性/略贬,'有点不正经但你想留着'的男主。",
+      "parentId": "dog_type",
+      "priority": 60,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qz_huai_gou",
+      "label": "坏狗",
+      "category": "角色气质",
+      "family": "犬系角色",
+      "aliases": [
+        "坏狗",
+        "恶犬",
+        "贱狗"
+      ],
+      "description": "比狗男更暗,带攻击性/占有欲,但仍是犬系。",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "dog_type",
+      "priority": 75,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qz_ye_gou",
+      "label": "野狗",
+      "category": "角色气质",
+      "family": "犬系角色",
+      "aliases": [
+        "野狗",
+        "疯狗"
+      ],
+      "description": "失控/出身边缘/暴烈的犬系。比坏狗更危险,通常伴随'问题学生''暴力'。",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "dog_type",
+      "priority": 85,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qz_lan_tao_xi",
+      "label": "烂人",
+      "category": "角色气质",
+      "aliases": [
+        "烂人"
+      ],
+      "description": "人品差、颓废或道德败坏的人",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "playboy_type",
+      "priority": 70,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qz_lao_po_nu",
+      "label": "老婆奴",
+      "category": "角色气质",
+      "family": "犬系角色",
+      "aliases": [
+        "老婆奴",
+        "无底线宠溺",
+        "溺爱"
+      ],
+      "description": "对老婆/对象单方面跪舔型,自愿降级为狗。",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "dog_type",
+      "priority": 75,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qz_die_gan_shao_nan",
+      "label": "爹系",
+      "category": "角色气质",
+      "family": "daddy系",
+      "aliases": [
+        "爹感少男",
+        "爹系",
+        "爹系熟男"
+      ],
+      "description": "年龄不一定大但有'爹感'的可靠/包容气质。和真 daddy 区分。",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "daddy_type",
+      "priority": 65,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qz_lao_pai_nan_gao",
+      "label": "老派",
+      "category": "角色气质",
+      "aliases": [
+        "老派男高",
+        "老封建"
+      ],
+      "description": "传统价值观/有点保守。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qz_qing_shu_nan",
+      "label": "轻熟男",
+      "category": "角色气质",
+      "aliases": [
+        "轻熟男",
+        "人夫感"
+      ],
+      "description": "30岁上下、稳定但仍有性吸引力的男性。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "mature_male_type",
+      "priority": 55,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qz_du_she",
+      "label": "毒舌",
+      "category": "角色气质",
+      "aliases": [
+        "毒舌",
+        "毒舌总裁",
+        "毒舌傲骨",
+        "白眼翻得好"
+      ],
+      "description": "讽刺刻薄但通常不是真坏人。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "sharp_tongue_type",
+      "priority": 65,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qz_ao_jiao",
+      "label": "傲娇",
+      "category": "角色气质",
+      "aliases": [
+        "傲娇",
+        "傲骨"
+      ],
+      "description": "口是心非、嘴硬心软的经典萌点。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "tsundere_type",
+      "priority": 60,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qz_naozi_buhao",
+      "label": "笨蛋",
+      "category": "角色气质",
+      "aliases": [
+        "傻子",
+        "笨蛋",
+        "傻"
+      ],
+      "description": "智力或情商不在线的可爱型",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qz_chu_nan",
+      "label": "处男",
+      "category": "角色气质",
+      "aliases": [
+        "处男",
+        "处男是最好的嫁妆"
+      ],
+      "description": "性经验为零,常和'纯情''洁'共现。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shen_haomen",
+      "label": "豪门",
+      "category": "身份阶层",
+      "aliases": [
+        "豪门",
+        "豪门夫妻",
+        "狗血豪门",
+        "港风豪门",
+        "财阀世家",
+        "家族企业"
+      ],
+      "description": "家族财富+权力的世界观入口。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "wealth_power_type",
+      "priority": 40,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shen_lao_qian",
+      "label": "老钱",
+      "category": "身份阶层",
+      "aliases": [
+        "老钱",
+        "沪上老钱"
+      ],
+      "description": "继承型旧贵财富,区别于新贵/暴发户。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "wealth_power_type",
+      "priority": 65,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shen_er_shi_zu",
+      "label": "二世祖",
+      "category": "身份阶层",
+      "aliases": [
+        "二世祖",
+        "废物二世祖"
+      ],
+      "description": "没有能力，只会挥霍家产的纨绔子弟。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "wealth_power_type",
+      "priority": 70,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shen_er_shi_zu",
+      "label": "太子爷",
+      "category": "身份阶层",
+      "aliases": [
+        "太子爷",
+        "纸醉金迷太子爷"
+      ],
+      "description": "权有势的“二代“，更多是强调其身份地位带来的压迫感与戏剧冲突。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "wealth_power_type",
+      "priority": 70,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shen_jin_zhu",
+      "label": "金主",
+      "category": "身份阶层",
+      "family": "daddy系",
+      "aliases": [
+        "金主",
+        "金主文学",
+        "非典型金主文学",
+        "包养"
+      ],
+      "description": "出钱方,关系结构中的上位者。",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "sponsor_power_type",
+      "priority": 75,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shen_daddy",
+      "label": "daddy",
+      "category": "身份阶层",
+      "family": "daddy系",
+      "aliases": [
+        "daddy",
+        "糖爹",
+        "sugar daddy",
+        "suger daddy",
+        "糖爹dom",
+        "金钱daddy",
+        "闷骚daddy"
+      ],
+      "_match_note": "匹配阶段统一小写化后比较",
+      "description": "圈内泛指年长上位包容型男性。注意:'亲父女 daddy' ≠ '金主 daddy',语义靠上下文。",
+      "examples": [
+        "金钱Daddy|斯文败类",
+        "BDSM/老钱/daddy/养成"
+      ],
+      "negativeAliases": [
+        "亲父女",
+        "养父",
+        "继父"
+      ],
+      "parentId": "daddy_type",
+      "priority": 80,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shen_gao_gan",
+      "label": "高干",
+      "category": "身份阶层",
+      "aliases": [
+        "高干",
+        "经典高干文学",
+        "军人",
+        "书记",
+        "军官"
+      ],
+      "description": "体制内/军政背景。古早言情常用。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "institutional_power_type",
+      "priority": 70,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shen_xiao_xian_chen",
+      "label": "小县城",
+      "category": "身份阶层",
+      "aliases": [
+        "小县城",
+        "县城文学",
+        "小城生活",
+        "潮湿文学"
+      ],
+      "description": "和豪门相对的下沉地理空间,自带氛围(湿、闷、廉价)。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "place_class_type",
+      "priority": 60,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shen_putong_ren",
+      "label": "普通人",
+      "category": "身份阶层",
+      "aliases": [
+        "普通人"
+      ],
+      "description": "明确反豪门/反金手指设定。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shen_liu_zi",
+      "label": "留子",
+      "category": "身份阶层",
+      "aliases": [
+        "留子",
+        "非典型留学公子"
+      ],
+      "description": "留学生身份,常和'美高''混血'共现。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shen_meigao",
+      "label": "美高",
+      "category": "身份阶层",
+      "aliases": [
+        "美高"
+      ],
+      "description": "美国高中场景,自带橄榄球/霸凌/小团体氛围。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shen_da_zi_shao_xie_zhang_yuan_lang",
+      "label": "落难书生",
+      "category": "身份阶层",
+      "aliases": [
+        "落魄公子哥",
+        "世家状元郎",
+        "落难未婚妻"
+      ],
+      "description": "古风/民国常见,身份高但当下落魄。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shen_jiang_hu_ren",
+      "label": "江湖人",
+      "category": "身份阶层",
+      "aliases": [
+        "侠客"
+      ],
+      "description": "武侠/古风世界中的身份入口。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shen_te_jing",
+      "label": "警特",
+      "category": "身份阶层",
+      "aliases": [
+        "特警",
+        "刑警",
+        "卧底"
+      ],
+      "description": "执法/对抗职业,常配'手铐 play'。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shen_gu_huo_zai",
+      "label": "黑道",
+      "category": "身份阶层",
+      "aliases": [
+        "古惑仔",
+        "黑社会大佬",
+        "黑帮老大"
+      ],
+      "description": "黑道。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shen_dian_jing",
+      "label": "电竞",
+      "category": "身份阶层",
+      "aliases": [
+        "电竞",
+        "游戏主播",
+        "电竞嫂子"
+      ],
+      "description": "电竞圈相关身份。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "guan_qing_mei_zhu_ma",
+      "label": "青梅竹马",
+      "category": "关系结构",
+      "aliases": [
+        "青梅竹马",
+        "竹马",
+        "幼驯染",
+        "娃娃亲"
+      ],
+      "description": "从小一起长大的关系入口。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "childhood_relation",
+      "priority": 70,
+      "scopePreference": "scenario",
+      "status": "active"
+    },
+    {
+      "id": "guan_si_dui_tou",
+      "label": "死对头",
+      "category": "关系结构",
+      "aliases": [
+        "死对头",
+        "对立",
+        "对抗路",
+        "宿敌",
+        "仇人"
+      ],
+      "description": "敌对关系起步,enemies-to-lovers 的经典入口。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "enemy_relation",
+      "priority": 70,
+      "scopePreference": "scenario",
+      "status": "active"
+    },
+    {
+      "id": "guan_shi_sheng",
+      "label": "师生",
+      "category": "关系结构",
+      "aliases": [
+        "师生"
+      ],
+      "description": "权力差关系类型之一。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "guan_xian_hun_hou_ai",
+      "label": "先婚后爱",
+      "category": "关系结构",
+      "aliases": [
+        "先婚后爱",
+        "假夫妻"
+      ],
+      "description": "婚姻在前感情在后,常配'契约'。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "guan_qian_ren",
+      "label": "前任",
+      "category": "关系结构",
+      "family": "破镜系",
+      "aliases": [
+        "前任",
+        "前男友",
+        "前夫",
+        "旧爱",
+        "ex"
+      ],
+      "description": "前情人重逢叙事入口。",
+      "examples": [
+        "新贵冷脸现任x权贵大爹前夫"
+      ],
+      "negativeAliases": [],
+      "parentId": "ex_relation",
+      "priority": 65,
+      "scopePreference": "scenario",
+      "status": "active"
+    },
+    {
+      "id": "guan_po_jing_chong_yuan",
+      "label": "破镜重圆",
+      "category": "关系结构",
+      "family": "破镜系",
+      "aliases": [
+        "破镜重圆",
+        "枯木逢春",
+        "久别重逢",
+        "十年重逢"
+      ],
+      "description": "分开后重新和好,通常有创伤复盘。",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "reunion_relation",
+      "priority": 75,
+      "scopePreference": "scenario",
+      "status": "active"
+    },
+    {
+      "id": "guan_zhui_qi_huo_zang_chang",
+      "label": "追妻火葬场",
+      "category": "关系结构",
+      "family": "破镜系",
+      "aliases": [
+        "追妻火葬场",
+        "忘恩负义c"
+      ],
+      "description": "曾经辜负后跪求复合的 c 视角。",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "reunion_relation",
+      "priority": 85,
+      "scopePreference": "scenario",
+      "status": "active"
+    },
+    {
+      "id": "guan_gu_ke",
+      "label": "骨科",
+      "category": "关系结构",
+      "family": "血缘禁忌",
+      "aliases": [
+        "骨科",
+        "真骨科",
+        "龙凤胎真骨科"
+      ],
+      "negativeAliases": [
+        "伪骨",
+        "伪骨科"
+      ],
+      "description": "亲属间恋爱关系的圈内黑话。'伪骨'是反义,要扣分。",
+      "examples": [],
+      "parentId": "blood_taboo_relation",
+      "priority": 85,
+      "scopePreference": "scenario",
+      "status": "active"
+    },
+    {
+      "id": "guan_wei_gu",
+      "label": "伪骨",
+      "category": "关系结构",
+      "aliases": [
+        "伪骨",
+        "伪骨科",
+        "抱错梗"
+      ],
+      "description": "看似亲属实非亲属,刻意制造禁忌感的设定。和真骨科要分开。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "blood_taboo_relation",
+      "priority": 80,
+      "scopePreference": "scenario",
+      "status": "active"
+    },
+    {
+      "id": "guan_xiong_mei",
+      "label": "兄妹",
+      "category": "关系结构",
+      "family": "血缘禁忌",
+      "aliases": [
+        "兄妹",
+        "姐弟",
+        "姐弟兄妹",
+        "兄弟夹心",
+        "蜜蜂兄弟夹心"
+      ],
+      "description": "兄妹/姐弟关系入口。",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "blood_taboo_relation",
+      "priority": 75,
+      "scopePreference": "scenario",
+      "status": "active"
+    },
+    {
+      "id": "guan_shu_zhi",
+      "label": "叔侄/婶侄",
+      "category": "关系结构",
+      "family": "血缘禁忌",
+      "aliases": [
+        "叔侄",
+        "婶侄",
+        "小叔"
+      ],
+      "description": "亲缘禁忌关系的另一类。",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "guan_qin_fu_nu",
+      "label": "亲父女",
+      "category": "关系结构",
+      "family": "血缘禁忌",
+      "aliases": [
+        "亲父女",
+        "养父",
+        "继父"
+      ],
+      "description": "高强度禁忌入口,需要在评价里特别小心语气。",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "blood_taboo_relation",
+      "priority": 90,
+      "scopePreference": "scenario",
+      "status": "active"
+    },
+    {
+      "id": "guan_san_ren_xing",
+      "label": "多人",
+      "category": "关系结构",
+      "aliases": [
+        "三人行",
+        "多人",
+        "多人NP",
+        "NP",
+        "3P",
+        "修罗场"
+      ],
+      "description": "多角关系结构,与单人 OTP 区分。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "guan_ti_shen",
+      "label": "替身",
+      "category": "关系结构",
+      "aliases": [
+        "替身",
+        "替身&前任文学"
+      ],
+      "description": "替代另一个人被爱的位置。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "replacement_relation",
+      "priority": 70,
+      "scopePreference": "scenario",
+      "status": "active"
+    },
+    {
+      "id": "guan_bai_yue_guang",
+      "label": "白月光",
+      "category": "关系结构",
+      "aliases": [
+        "白月光",
+        "白月光u",
+        "双白月光"
+      ],
+      "description": "求而不得/精神图腾型对象。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "moonlight_relation",
+      "priority": 70,
+      "scopePreference": "scenario",
+      "status": "active"
+    },
+    {
+      "id": "guan_hei_yue_guang",
+      "label": "黑月光",
+      "category": "关系结构",
+      "aliases": [
+        "黑月光"
+      ],
+      "description": "白月光的暗面变体,带恨/怨。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "moonlight_relation",
+      "priority": 75,
+      "scopePreference": "scenario",
+      "status": "active"
+    },
+    {
+      "id": "guan_chu_lian",
+      "label": "初恋",
+      "category": "关系结构",
+      "aliases": [
+        "初恋"
+      ],
+      "description": "第一次的感情对象。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "guan_wan_ren_mi",
+      "label": "万人迷/群像",
+      "category": "关系结构",
+      "family": "万人迷/群像",
+      "aliases": [
+        "万人迷",
+        "群像",
+        "都市群像",
+        "书院群像"
+      ],
+      "description": "多 NPC 围绕主角的结构。",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "guan_xian_hou_gong",
+      "label": "后宫/合法多人",
+      "category": "关系结构",
+      "family": "万人迷/群像",
+      "aliases": [
+        "合法后宫",
+        "皇帝c"
+      ],
+      "description": "古风权力结构下的多人合法关系。",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "guan_shuang_chu_gui",
+      "label": "双出轨",
+      "category": "关系结构",
+      "aliases": [
+        "双出轨"
+      ],
+      "description": "双方都对原配出轨。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "guan_nv_lv",
+      "label": "女绿",
+      "category": "关系结构",
+      "aliases": [
+        "女绿"
+      ],
+      "description": "圈内黑话,女主被绿/出轨叙事。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "guan_jin_si_que",
+      "label": "金丝雀",
+      "category": "关系结构",
+      "aliases": [
+        "金丝雀",
+        "玩物"
+      ],
+      "description": "被包养/被囚养的关系位置。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "guan_lian_yin",
+      "label": "联姻/相亲",
+      "category": "关系结构",
+      "aliases": [
+        "相亲",
+        "联姻",
+        "未婚妻",
+        "相睇",
+        "长辈安排"
+      ],
+      "description": "外力安排的婚配关系。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "arranged_marriage_relation",
+      "priority": 65,
+      "scopePreference": "scenario",
+      "status": "active"
+    },
+    {
+      "id": "guan_pao_you",
+      "label": "炮友",
+      "category": "关系结构",
+      "aliases": [
+        "炮友",
+        "固炮"
+      ],
+      "description": "明确的非正式性关系。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "guan_yang_cheng",
+      "label": "养成",
+      "category": "关系结构",
+      "aliases": [
+        "养成",
+        "白手起家养大u"
+      ],
+      "description": "从小养大再恋爱,有伦理灰色。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qing_suan_se",
+      "label": "酸涩",
+      "category": "情感走向",
+      "family": "酸涩家族",
+      "aliases": [
+        "酸涩",
+        "甜宠酸涩",
+        "温暖酸涩",
+        "酸涩拉扯"
+      ],
+      "description": "圈内最高频情感色调,'甜里带苦'。",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "bittersweet_tone",
+      "priority": 60,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qing_hen_hai_qing_tian",
+      "label": "恨海情天",
+      "category": "情感走向",
+      "family": "酸涩家族",
+      "aliases": [
+        "恨海情天",
+        "恨海晴天"
+      ],
+      "description": "爱恨交织、撕裂感强烈的关系基调。",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "bittersweet_tone",
+      "priority": 80,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qing_zuo_hen",
+      "label": "做恨",
+      "category": "情感走向",
+      "family": "酸涩家族",
+      "aliases": [
+        "做恨",
+        "做怨侣",
+        "皇帝重生做恨"
+      ],
+      "description": "明知会恨仍要做爱/共度的虐型基调。",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "bittersweet_tone",
+      "priority": 85,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qing_chun_ai",
+      "label": "纯爱",
+      "category": "情感走向",
+      "aliases": [
+        "纯爱",
+        "轻松纯爱"
+      ],
+      "negativeAliases": [
+        "纯恨"
+      ],
+      "description": "情感单纯专一。和'纯恨'反义。",
+      "family": "",
+      "examples": [],
+      "parentId": "love_tone",
+      "priority": 55,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qing_chun_hen",
+      "label": "纯恨",
+      "category": "情感走向",
+      "aliases": [
+        "纯恨",
+        "纯卖骚",
+        "媚女恨男"
+      ],
+      "description": "全程恨/无爱情线,仅性张力或权力博弈。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "love_tone",
+      "priority": 75,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qing_tian_chong",
+      "label": "甜宠",
+      "category": "情感走向",
+      "aliases": [
+        "甜宠",
+        "狗血甜宠"
+      ],
+      "description": "以宠溺为主基调的情感叙事。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "love_tone",
+      "priority": 55,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qing_gou_xue",
+      "label": "狗血",
+      "category": "情感走向",
+      "aliases": [
+        "狗血",
+        "古早狗血",
+        "微狗血"
+      ],
+      "description": "戏剧冲突浓密、转折多。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "dramatic_tone",
+      "priority": 60,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qing_shuang_xiang_jiu_shu",
+      "label": "双向救赎",
+      "category": "情感走向",
+      "aliases": [
+        "双向救赎",
+        "双向暗恋",
+        "风雨同舟"
+      ],
+      "description": "互相疗愈/拯救的对等型情感。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qing_ku_lian",
+      "label": "美强惨",
+      "category": "情感走向",
+      "aliases": [
+        "美强惨",
+        "美惨"
+      ],
+      "description": "外貌强能力强但身世惨,经典催泪三件套。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qing_la_che",
+      "label": "拉扯",
+      "category": "情感走向",
+      "family": "酸涩家族",
+      "aliases": [
+        "拉扯",
+        "极限拉扯"
+      ],
+      "description": "进退两难的情感博弈。",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "bittersweet_tone",
+      "priority": 65,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qing_e_su",
+      "label": "恶俗",
+      "category": "情感走向",
+      "aliases": [
+        "恶俗",
+        "恶俗治愈",
+        "恶俗开盖",
+        "产奶"
+      ],
+      "description": "圈内自嘲式标签,主动承认狗血和nsfw相关内容。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qing_kong_xin",
+      "label": "空心/淡感",
+      "category": "情感走向",
+      "aliases": [
+        "空心",
+        "空心淡人"
+      ],
+      "description": "情感钝感的角色叙事走向。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "hu_qiang_zhi_ai",
+      "label": "强制爱",
+      "category": "互动机制",
+      "family": "强制爱系",
+      "aliases": [
+        "强制爱",
+        "强取豪夺"
+      ],
+      "description": "以强力推进关系,边界模糊。",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "coercive_love_type",
+      "priority": 80,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "hu_qiu_jin",
+      "label": "囚禁",
+      "category": "互动机制",
+      "family": "强制爱系",
+      "aliases": [
+        "囚禁",
+        "囚禁私奔"
+      ],
+      "description": "物理限制对方自由,常和黑化共现。",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "coercive_love_type",
+      "priority": 85,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "hu_hei_hua",
+      "label": "黑化",
+      "category": "互动机制",
+      "family": "强制爱系",
+      "aliases": [
+        "黑化",
+        "黑化重生"
+      ],
+      "description": "角色从光明走向阴湿/失控。",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "coercive_love_type",
+      "priority": 75,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "hu_yin_shi",
+      "label": "阴湿",
+      "category": "互动机制",
+      "aliases": [
+        "阴湿",
+        "阴湿小狗",
+        "微阴湿"
+      ],
+      "description": "情绪/行为带潮湿感、占有欲、压抑暗涌。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "dark_possessive_type",
+      "priority": 70,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "hu_BDSM",
+      "label": "BDSM",
+      "category": "互动机制",
+      "aliases": [
+        "BDSM",
+        "D/s",
+        "SM",
+        "手铐play",
+        "Dom系"
+      ],
+      "description": "BDSM 总类标签。具体支配/臣服/训诫倾向优先使用 Dom、Sub、温柔Dom、训诫等子标签。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "bdsm_type",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "hu_sweet_talk",
+      "label": "Sweet Talk",
+      "category": "互动机制",
+      "aliases": [
+        "sweet talk",
+        "会哄不会停"
+      ],
+      "_match_note": "case-insensitive",
+      "description": "甜言蜜语流,语言挑逗为主要互动。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "hu_man_gong_lue",
+      "label": "难攻略",
+      "category": "互动机制",
+      "aliases": [
+        "慢攻略",
+        "难攻略"
+      ],
+      "description": "需要长时间/困难度高才能推进的关系机制。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "攻略难度",
+      "priority": 60,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "hu_zi_wo_gong_lue",
+      "label": "自我攻略",
+      "category": "互动机制",
+      "aliases": [
+        "自我攻略"
+      ],
+      "description": "char 自动跪/自降身段型,反向攻略。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "攻略难度",
+      "priority": 75,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "hu_if_xian",
+      "label": "IF 线",
+      "category": "互动机制",
+      "aliases": [
+        "if线",
+        "专属if",
+        "穿越if",
+        "人鱼if"
+      ],
+      "_match_note": "case-insensitive",
+      "description": "假设性分支线,与主线并行。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "hu_ti_xing_cha",
+      "label": "体型差",
+      "category": "互动机制",
+      "aliases": [
+        "体型差",
+        "高壮男"
+      ],
+      "description": "身材/力量差形成的物理张力。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shi_gu_feng",
+      "label": "古风",
+      "category": "世界观题材",
+      "aliases": [
+        "古风"
+      ],
+      "description": "古代/架空中式世界。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shi_min_guo",
+      "label": "民国",
+      "category": "世界观题材",
+      "aliases": [
+        "民国",
+        "1940上海",
+        "谍战"
+      ],
+      "description": "民国年代背景。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shi_xian_dai",
+      "label": "现代",
+      "category": "世界观题材",
+      "aliases": [
+        "现代",
+        "现实向",
+        "都市"
+      ],
+      "description": "当代都市背景。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shi_xiao_yuan",
+      "label": "校园",
+      "category": "世界观题材",
+      "aliases": [
+        "校园",
+        "高中群像",
+        "校园墙",
+        "校服到婚纱"
+      ],
+      "description": "校园场景。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shi_gang_feng",
+      "label": "港风",
+      "category": "世界观题材",
+      "aliases": [
+        "港风",
+        "粤语",
+        "香港",
+        "中环",
+        "维多利亚港",
+        "港圈"
+      ],
+      "description": "香港90年代/港片美学。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shi_wu_xia",
+      "label": "武侠",
+      "category": "世界观题材",
+      "aliases": [
+        "武侠",
+        "江湖",
+        "高自由武侠群像"
+      ],
+      "description": "武侠江湖。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shi_xiu_xian",
+      "label": "修仙",
+      "category": "世界观题材",
+      "aliases": [
+        "修仙",
+        "合欢宗",
+        "男鬼"
+      ],
+      "description": "修真/仙侠/灵异。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shi_quan_mou",
+      "label": "权谋",
+      "category": "世界观题材",
+      "aliases": [
+        "权谋",
+        "宫斗线",
+        "正剧"
+      ],
+      "description": "权力博弈为主线,并非豪门就是权谋。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shi_abo",
+      "label": "ABO",
+      "category": "世界观题材",
+      "aliases": [
+        "EABO",
+        "ABO",
+        "异世界线"
+      ],
+      "description": "性别社会学设定。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shi_xing_ji",
+      "label": "星际",
+      "category": "世界观题材",
+      "aliases": [
+        "星际军校"
+      ],
+      "description": "科幻社会学设定。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shi_kuai_chuan",
+      "label": "快穿/无限流",
+      "category": "世界观题材",
+      "aliases": [
+        "快穿",
+        "无限流",
+        "穿越",
+        "重启人生"
+      ],
+      "description": "多世界/任务流。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shi_di_si_tian_zai",
+      "label": "末世/灾难",
+      "category": "世界观题材",
+      "aliases": [
+        "第四天灾",
+        "末日线",
+        "丧尸"
+      ],
+      "description": "末日生存。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shi_lian_zong",
+      "label": "恋综",
+      "category": "世界观题材",
+      "aliases": [
+        "恋综",
+        "恋爱时区",
+        "肉欲恋综"
+      ],
+      "description": "恋爱综艺设定。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shi_tong_ren",
+      "label": "同人",
+      "category": "世界观题材",
+      "aliases": [
+        "同人",
+        "同人杯",
+        "衍生卡"
+      ],
+      "description": "基于既有 IP 的二创卡。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shi_ren_wai",
+      "label": "人外",
+      "category": "世界观题材",
+      "aliases": [
+        "人外",
+        "狐妖",
+        "魅魔",
+        "人鱼",
+        "兽人",
+        "吸血鬼",
+        "蜜蜂",
+        "虎头蜂",
+        "熊蜂"
+      ],
+      "description": "非人种族角色。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shi_BG",
+      "label": "BG",
+      "category": "世界观题材",
+      "aliases": [
+        "BG",
+        "bgb"
+      ],
+      "description": "异性恋向。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shi_BL",
+      "label": "BL",
+      "category": "世界观题材",
+      "aliases": [
+        "BL",
+        "BL.BG.GB"
+      ],
+      "description": "男男向。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shi_GL",
+      "label": "GL",
+      "category": "世界观题材",
+      "aliases": [
+        "GL"
+      ],
+      "description": "女女向。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shi_xuan_yi",
+      "label": "悬疑/探案",
+      "category": "世界观题材",
+      "aliases": [
+        "推理",
+        "探案",
+        "剧情向"
+      ],
+      "description": "案件驱动叙事。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "lei_jie",
+      "label": "洁",
+      "category": "雷点/偏好",
+      "aliases": [
+        "洁",
+        "男洁",
+        "身心洁",
+        "全洁"
+      ],
+      "negativeAliases": [
+        "不洁"
+      ],
+      "description": "明确双方过往/身体洁净的偏好,圈内重要分水岭。",
+      "family": "",
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "lei_bu_jie",
+      "label": "不洁",
+      "category": "雷点/偏好",
+      "aliases": [
+        "不洁"
+      ],
+      "description": "和'洁'对立,是另一群人的偏好。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "lei_bei_de",
+      "label": "背德",
+      "category": "雷点/偏好",
+      "aliases": [
+        "背德",
+        "禁忌",
+        "禁忌乱伦",
+        "禁忌感年上"
+      ],
+      "description": "突破伦理/规范的设定偏好。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "lei_chu_gui",
+      "label": "出轨/绿",
+      "category": "雷点/偏好",
+      "aliases": [
+        "NTR",
+        "睡奸",
+        "出轨"
+      ],
+      "description": "对绿/被绿/出轨的偏好或雷区。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "lei_quan_yuan_e_ren",
+      "label": "全员恶人",
+      "category": "雷点/偏好",
+      "aliases": [
+        "全员恶人",
+        "混乱关系"
+      ],
+      "description": "没有道德制高点的人物群。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "lei_xp_zi_you",
+      "label": "XP自由",
+      "category": "雷点/偏好",
+      "aliases": [
+        "xp自由杯",
+        "XP自由",
+        "高自由度"
+      ],
+      "description": "卡作者主动给玩家选择空间的标签。",
+      "family": "",
+      "negativeAliases": [],
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "shi_da_di_tu",
+      "label": "大地图",
+      "category": "世界观题材",
+      "family": "地图/开放世界",
+      "aliases": [
+        "大地图",
+        "地图",
+        "大世界",
+        "高自由地图"
+      ],
+      "negativeAliases": [],
+      "description": "大地图相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 70,
+      "scopePreference": "world",
+      "status": "active"
+    },
+    {
+      "id": "qing_ri_chang",
+      "label": "日常",
+      "category": "情感走向",
+      "family": "日常低冲突",
+      "aliases": [
+        "日常",
+        "日常向",
+        "日常流"
+      ],
+      "negativeAliases": [],
+      "description": "日常相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 40,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "qz_cao_han",
+      "label": "糙汉",
+      "category": "角色气质",
+      "family": "糙汉系",
+      "aliases": [
+        "糙汉",
+        "糙汉文学"
+      ],
+      "negativeAliases": [],
+      "description": "糙汉相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 70,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "hu_tiao_jiao",
+      "label": "调教",
+      "category": "互动机制",
+      "family": "BDSM/训诫系",
+      "aliases": [
+        "调教",
+        "训导"
+      ],
+      "negativeAliases": [],
+      "description": "调教相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 75,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "shen_gua_fu",
+      "label": "鳏夫",
+      "category": "身份阶层",
+      "family": "婚恋状态",
+      "aliases": [
+        "鳏夫",
+        "丧偶"
+      ],
+      "negativeAliases": [],
+      "description": "鳏夫相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 60,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "guan_guimi_xing_nanyou",
+      "label": "闺蜜型男友",
+      "category": "关系结构",
+      "family": "陪伴型关系",
+      "aliases": [
+        "闺蜜型男友",
+        "男闺蜜式恋人"
+      ],
+      "negativeAliases": [],
+      "description": "闺蜜型男友相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 65,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "qz_hou_lian_pi",
+      "label": "厚脸皮",
+      "category": "角色气质",
+      "family": "社交脸皮",
+      "aliases": [
+        "厚脸皮",
+        "不要脸",
+        "脸皮厚"
+      ],
+      "negativeAliases": [],
+      "description": "厚脸皮相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 60,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "shen_hun_xue",
+      "label": "混血",
+      "category": "身份阶层",
+      "family": "族裔/身份背景",
+      "aliases": [
+        "混血"
+      ],
+      "negativeAliases": [],
+      "description": "混血相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 35,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "guan_nian_ling_cha",
+      "label": "年龄差",
+      "category": "关系结构",
+      "family": "年龄差关系",
+      "aliases": [
+        "年龄差",
+        "年上年龄差",
+        "年下年龄差"
+      ],
+      "negativeAliases": [],
+      "description": "年龄差相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 70,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "guan_jiu_feng_chen_ni",
+      "label": "救风尘(逆)",
+      "category": "关系结构",
+      "family": "救赎/风尘关系",
+      "aliases": [
+        "救风尘(逆)",
+        "逆救风尘",
+        "救风尘"
+      ],
+      "negativeAliases": [],
+      "description": "救风尘(逆)相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 65,
+      "scopePreference": "scenario",
+      "status": "active"
+    },
+    {
+      "id": "qz_le_zi_ren",
+      "label": "乐子人",
+      "category": "角色气质",
+      "family": "玩世不恭",
+      "aliases": [
+        "乐子人",
+        "看热闹不嫌事大"
+      ],
+      "negativeAliases": [],
+      "description": "乐子人相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 55,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "qz_lian_ai_nao",
+      "label": "恋爱脑",
+      "category": "角色气质",
+      "family": "恋爱脑",
+      "aliases": [
+        "恋爱脑"
+      ],
+      "negativeAliases": [],
+      "description": "恋爱脑相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 60,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "lei_mo_u",
+      "label": "嬤u",
+      "category": "雷点/偏好",
+      "family": "玩家位偏好",
+      "aliases": [
+        "嬤u",
+        "嬷u"
+      ],
+      "negativeAliases": [],
+      "description": "嬤u相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 35,
+      "scopePreference": "any",
+      "status": "active"
+    },
+    {
+      "id": "qz_men_sao",
+      "label": "闷骚",
+      "category": "角色气质",
+      "family": "内敛骚感",
+      "aliases": [
+        "闷骚",
+        "暗骚"
+      ],
+      "negativeAliases": [],
+      "description": "闷骚相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 65,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "shen_nan_da",
+      "label": "男大",
+      "category": "身份阶层",
+      "family": "学生身份",
+      "aliases": [
+        "男大",
+        "男大学生"
+      ],
+      "negativeAliases": [],
+      "description": "男大相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 55,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "shen_nan_gao",
+      "label": "男高",
+      "category": "身份阶层",
+      "family": "学生身份",
+      "aliases": [
+        "男高",
+        "男高中生"
+      ],
+      "negativeAliases": [],
+      "description": "男高相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 55,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "qz_nv_zhuang_zhi_nan",
+      "label": "女装直男",
+      "category": "角色气质",
+      "family": "性别表达反差",
+      "aliases": [
+        "女装直男",
+        "女装"
+      ],
+      "negativeAliases": [],
+      "description": "女装直男相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 55,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "shi_qing_chun",
+      "label": "青春",
+      "category": "世界观题材",
+      "family": "青春校园",
+      "aliases": [
+        "青春",
+        "青春疼痛",
+        "青春期"
+      ],
+      "negativeAliases": [],
+      "description": "青春相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 45,
+      "scopePreference": "world",
+      "status": "active"
+    },
+    {
+      "id": "qing_qing_xi_ju",
+      "label": "轻喜剧",
+      "category": "情感走向",
+      "family": "喜剧调性",
+      "aliases": [
+        "轻喜剧",
+        "轻松喜剧",
+        "喜剧向"
+      ],
+      "negativeAliases": [],
+      "description": "轻喜剧相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 45,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "shen_ri_nan",
+      "label": "日男",
+      "category": "身份阶层",
+      "family": "地域/文化身份",
+      "aliases": [
+        "日男",
+        "日本男"
+      ],
+      "negativeAliases": [],
+      "description": "日男相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 35,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "shen_sai_che_shou",
+      "label": "赛车手",
+      "category": "身份阶层",
+      "family": "职业身份",
+      "aliases": [
+        "赛车手",
+        "车手"
+      ],
+      "negativeAliases": [],
+      "description": "赛车手相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 55,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "qz_sao_bao",
+      "label": "骚包",
+      "category": "角色气质",
+      "family": "外放孔雀",
+      "aliases": [
+        "骚包",
+        "孔雀开屏"
+      ],
+      "negativeAliases": [],
+      "description": "骚包相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 65,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "shen_ou_xiang",
+      "label": "偶像",
+      "category": "身份阶层",
+      "family": "娱乐圈身份",
+      "aliases": [
+        "偶像",
+        "失格偶像",
+        "爱豆"
+      ],
+      "negativeAliases": [],
+      "description": "偶像相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 55,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "guan_tong_zhuo",
+      "label": "同桌",
+      "category": "关系结构",
+      "family": "校园关系",
+      "aliases": [
+        "同桌",
+        "天降同桌",
+        "新同桌"
+      ],
+      "negativeAliases": [],
+      "description": "同桌相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 65,
+      "scopePreference": "scenario",
+      "status": "active"
+    },
+    {
+      "id": "qz_tian_ran_hei",
+      "label": "天然黑",
+      "category": "角色气质",
+      "family": "腹黑系",
+      "aliases": [
+        "天然黑",
+        "天然腹黑"
+      ],
+      "negativeAliases": [],
+      "description": "天然黑相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 65,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "qz_tu_cao_yi",
+      "label": "吐槽役",
+      "category": "角色气质",
+      "family": "毒舌/吐槽系",
+      "aliases": [
+        "吐槽役",
+        "吐槽担当"
+      ],
+      "negativeAliases": [],
+      "description": "吐槽役相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 50,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "guan_tui_hun_liu",
+      "label": "退婚流",
+      "category": "关系结构",
+      "family": "婚约破裂",
+      "aliases": [
+        "退婚流",
+        "退婚",
+        "被退婚"
+      ],
+      "negativeAliases": [],
+      "description": "退婚流相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 65,
+      "scopePreference": "scenario",
+      "status": "active"
+    },
+    {
+      "id": "shen_wang_huang",
+      "label": "网黄",
+      "category": "身份阶层",
+      "family": "擦边/网红身份",
+      "aliases": [
+        "网黄",
+        "擦边网黄",
+        "擦边主播"
+      ],
+      "negativeAliases": [],
+      "description": "网黄相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 60,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "qz_wen_ti_xue_sheng",
+      "label": "问题学生",
+      "category": "角色气质",
+      "family": "问题少年系",
+      "aliases": [
+        "问题学生",
+        "问题少年",
+        "坏学生"
+      ],
+      "negativeAliases": [],
+      "description": "问题学生相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 70,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "shen_xin_li_yi_sheng",
+      "label": "心理医生",
+      "category": "身份阶层",
+      "family": "职业身份",
+      "aliases": [
+        "心理医生",
+        "心理咨询师",
+        "医生"
+      ],
+      "negativeAliases": [],
+      "description": "心理医生相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 55,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "guan_xiong_jing",
+      "label": "雄竞",
+      "category": "关系结构",
+      "family": "竞争关系",
+      "aliases": [
+        "雄竞",
+        "男性竞争",
+        "争风吃醋"
+      ],
+      "negativeAliases": [],
+      "description": "雄竞相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 70,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "guan_yang_zi",
+      "label": "养子",
+      "category": "关系结构",
+      "family": "拟亲缘关系",
+      "aliases": [
+        "养子",
+        "养女",
+        "收养"
+      ],
+      "negativeAliases": [],
+      "description": "养子相关的社区标签。",
+      "examples": [],
+      "parentId": "",
+      "priority": 60,
+      "scopePreference": "scenario",
+      "status": "active"
+    },
+    {
+      "id": "guan_huan_xi_yuan_jia",
+      "label": "欢喜冤家",
+      "category": "关系结构",
+      "family": "敌对/喜剧关系",
+      "aliases": [
+        "欢喜冤家",
+        "斗嘴",
+        "拌嘴",
+        "互怼",
+        "吵架拌嘴"
+      ],
+      "negativeAliases": [],
+      "description": "轻喜剧式对抗关系，吵闹但暧昧，不等同于死对头/仇人。",
+      "examples": [],
+      "parentId": "enemy_relation",
+      "priority": 68,
+      "scopePreference": "scenario",
+      "status": "active"
+    },
+    {
+      "id": "hu_dom",
+      "label": "Dom",
+      "category": "互动机制",
+      "family": "BDSM/训诫系",
+      "aliases": [
+        "Dom",
+        "S向",
+        "手黑S",
+        "支配者",
+        "主人"
+      ],
+      "negativeAliases": [],
+      "description": "D/s 关系中的支配位。比 BDSM 总类更具体。",
+      "examples": [],
+      "parentId": "bdsm_type",
+      "priority": 80,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "hu_sub",
+      "label": "Sub",
+      "category": "互动机制",
+      "family": "BDSM/训诫系",
+      "aliases": [
+        "Sub",
+        "M向",
+        "被支配",
+        "臣服位"
+      ],
+      "negativeAliases": [],
+      "description": "D/s 关系中的臣服位。",
+      "examples": [],
+      "parentId": "bdsm_type",
+      "priority": 75,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "hu_wen_rou_dom",
+      "label": "温柔Dom",
+      "category": "互动机制",
+      "family": "BDSM/训诫系",
+      "aliases": [
+        "温柔Dom",
+        "Soft Dom",
+        "Gentle Dom",
+        "温柔支配"
+      ],
+      "negativeAliases": [],
+      "description": "以温柔、引导、稳定感为主的 Dom。",
+      "examples": [],
+      "parentId": "bdsm_type",
+      "priority": 85,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "hu_xun_jie",
+      "label": "训诫",
+      "category": "互动机制",
+      "family": "BDSM/训诫系",
+      "aliases": [
+        "训诫",
+        "训狗大师",
+        "规训",
+        "惩戒",
+        "教训",
+        "我教过你的"
+      ],
+      "negativeAliases": [],
+      "description": "以规则、纠正、惩戒为核心的互动机制。",
+      "examples": [],
+      "parentId": "bdsm_type",
+      "priority": 82,
+      "scopePreference": "card",
+      "status": "active"
+    },
+    {
+      "id": "hu_brat",
+      "label": "brat",
+      "category": "互动机制",
+      "family": "BDSM/训诫系",
+      "aliases": [
+        "brat",
+        "适合brat",
+        "挑衅型sub",
+        "欠管"
+      ],
+      "negativeAliases": [],
+      "description": "挑衅型被支配者/需要被管教的互动位置。",
+      "examples": [],
+      "parentId": "bdsm_type",
+      "priority": 70,
+      "scopePreference": "card",
+      "status": "active"
+    }
+  ]
+}

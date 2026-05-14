@@ -1,0 +1,25 @@
+.charalog-extension-overlay {
+  background: #f7f1e8;
+  inset: 0;
+  overflow: hidden;
+  position: fixed;
+  z-index: 99999;
+}
+
+.charalog-extension-settings-row {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.charalog-extension-host {
+  height: 100vh;
+  max-height: none;
+  max-width: none;
+  width: 100vw;
+}
+
+body.charalog-extension-open {
+  overflow: hidden;
+}
